@@ -72,4 +72,6 @@ async def predict_bmi(dat: BMIdata):
     pred = np.expm1(model1.predict(scaled))
     return (pred.tolist()[0]/100)* 8
 
-
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run(app, host="0.0.0.0", port=9000)
